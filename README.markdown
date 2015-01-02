@@ -70,30 +70,30 @@
 ## Основы
 
 Существуют 5 типов потоков:
-		- readable
-		- writable
-		- transform
-		- duplex
-		- "classic"
+	- readable
+	- writable
+	- transform
+	- duplex
+	- "classic"
 
 ### pipe	
 Все типы потоков используют .pipe() для объединения ввода и вывода. 
 
 .pipe() - это просто функция, которая принимает readable поток src и перенаправляет вывод в writable поток dst: 
 
-```
+``` js
 	src.pipe(dst)
 ```
 
 .pipe(dst) возвращает dst, поэтому можно объединять вместе несколько .pipe():
 
-```
+``` js
 	a.pipe(b).pipe(c).pipe(d)
 ```
 
 , тоже самое можно записать так:
 
-```
+``` js
 	a.pipe(b);
 	b.pipe(c);
 	c.pipe(d);
@@ -110,7 +110,7 @@
 ### Потоки для чтения (readable streams)
 Потоки для чтения выводят данные, которые могут быть перенаправлены в поток для записи (writable), transform - потоки или duplex с помощью .pipe(): 
 
-```
+``` js
 	readableStream.pipe(dst)
 ```
 
